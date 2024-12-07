@@ -1,0 +1,321 @@
+HTML WEB CONVERTER TEXT
+      
+      
+      
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Text Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .title {
+            flex: 1;
+        }
+        .title h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            text-align: right;
+        }
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .profile-info {
+            font-size: 14px;
+        }
+        .profile-info strong {
+            display: block;
+            font-weight: bold;
+        }
+        .style-item {
+            margin-bottom: 10px;
+        }
+        .style-item strong {
+            font-weight: bold;
+        }
+        .input-section {
+            margin-bottom: 20px;
+        }
+        .input-section input {
+            padding: 8px;
+            width: calc(100% - 90px);
+            margin-right: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .input-section button {
+            padding: 8px 16px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .input-section button:hover {
+            background-color: #0056b3;
+        }
+        .info-section {
+            margin-top: 20px;
+            font-style: italic;
+            color: #666;
+        }
+        .loader-5 {
+            position: relative;
+            display: none;
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+        }
+        .loader-5 div {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+        .loader-5 div:after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #8f44fd, #c244fd);
+            animation: loading-5 2.1s ease infinite backwards;
+        }
+        .loader-5 div:nth-child(1) {
+            transform: translate(-50%, -50%) translate(60%, 120%);
+        }
+        .loader-5 div:nth-child(2) {
+            transform: translate(-50%, -50%) translate(-60%, 120%);
+        }
+        .loader-5 div:nth-child(3) {
+            transform: translate(-50%, -50%) translate(120%, 0);
+        }
+        .loader-5 div:nth-child(4) {
+            transform: translate(-50%, -50%);
+        }
+        .loader-5 div:nth-child(5) {
+            transform: translate(-50%, -50%) translate(-120%, 0);
+        }
+        .loader-5 div:nth-child(6) {
+            transform: translate(-50%, -50%) translate(60%, -120%);
+        }
+        .loader-5 div:nth-child(7) {
+            transform: translate(-50%, -50%) translate(-60%, -120%);
+        }
+        .loader-5 div:nth-child(1):after {
+            animation-delay: 0.15s;
+        }
+        .loader-5 div:nth-child(2):after {
+            animation-delay: 0.3s;
+        }
+        .loader-5 div:nth-child(3):after {
+            animation-delay: 0.45s;
+        }
+        .loader-5 div:nth-child(4):after {
+            animation-delay: 0.6s;
+        }
+        .loader-5 div:nth-child(5):after {
+            animation-delay: 0.75s;
+        }
+        .loader-5 div:nth-child(6):after {
+            animation-delay: 0.9s;
+        }
+        .loader-5 div:nth-child(7):after {
+            animation-delay: 1.05s;
+        }
+        @keyframes loading-5 {
+            0%, 20% {
+                opacity: 0;
+                transform: translateY(-300%);
+            }
+            30%, 70% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            90%, 100% {
+                opacity: 0;
+                transform: translateY(300%);
+            }
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .profile {
+                margin-top: 10px;
+                text-align: left;
+            }
+        }
+        body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+body.dark-mode .container {
+    background-color: #444;
+    border-color: #666;
+}
+body.dark-mode input {
+    background-color: #222;
+    border-color: #555;
+    color: #fff;
+}
+body.dark-mode button {
+    background-color: #0056b3;
+    color: #fff;
+}
+body.dark-mode footer {
+    color: #aaa;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <h1>Styled Text Converter</h1>
+            </div>
+            <div class="profile">
+                <img src=" https://files.catbox.moe/mjnkej.jpg">
+                <div class="profile-info">
+                    <strong>Makaka</strong>
+                    Web Developer
+                </div>
+            </div>
+        </div>
+        <p>Masukkan teks yang ingin dikonversi ke berbagai gaya:</p>
+        <div class="input-section">
+            <input type="text" id="user-input" placeholder="Masukkan teks di sini" />
+            <button onclick="generateStyledText()">Convert</button>
+        </div>
+        <button id="theme-toggle" onclick="toggleTheme()">🌙 </button>
+        <div class="loader-5" id="loading-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="styles-container"></div>
+    </div>
+
+    <footer>
+        By <a href="https://github.com/makaka" target="_blank">Kaizel</a>
+    </footer>
+
+    <script>
+        async function generateStyledText() {
+            const userInput = document.getElementById("user-input").value.trim();
+            const spinner = document.getElementById("loading-spinner");
+            const container = document.getElementById("styles-container");
+            
+            if (!userInput) {
+                alert("Harap masukkan teks sebelum mengkonversi.");
+                return;
+            }
+
+            try {
+                spinner.style.display = "block";
+                container.innerHTML = "";
+
+                const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(`https://kaifire.vercel.app/style?q=${userInput}`);
+                const response = await fetch(proxyUrl);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const proxyData = await response.json();
+                const data = JSON.parse(proxyData.contents);
+
+                displayStyles(data.data);
+
+                if (data.info) {
+                    displayInfo(data.info);
+                }
+            } catch (error) {
+                console.error("Gagal mengambil data dari API:", error);
+                container.innerHTML = `<p style="color: red;">Gagal mengambil data dari API.</p>`;
+            } finally {
+                spinner.style.display = "none";
+            }
+        }
+
+        function displayStyles(styles) {
+            const container = document.getElementById("styles-container");
+            container.innerHTML = "";
+
+            styles.forEach((style) => {
+                const styleDiv = document.createElement("div");
+                styleDiv.classList.add("style-item");
+
+                const name = document.createElement("strong");
+                name.textContent = style.name + ": ";
+
+                const result = document.createElement("span");
+                result.textContent = style.result || "(kosong)";
+
+                styleDiv.appendChild(name);
+                styleDiv.appendChild(result);
+                container.appendChild(styleDiv);
+            });
+        }
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    const toggleButton = document.getElementById("theme-toggle");
+    toggleButton.textContent = document.body.classList.contains('dark-mode') ? "☀️ Light" : "🌙 Dark";
+}
+        function displayInfo(info) {
+            const container = document.getElementById("styles-container");
+            const infoDiv = document.createElement("div");
+            infoDiv.classList.add("info-section");
+            infoDiv.textContent = `Info: ${info}`;
+            container.appendChild(infoDiv);
+        }
+    </script>
+</body>
+</html>
